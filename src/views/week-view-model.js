@@ -25,7 +25,7 @@ export function getWeekDays({ currentDate, weekStart, weekDays, rollingDays }) {
   }
 
   const days = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 14; i++) { // Change to 14 to show two weeks
     const date = new Date(weekStart);
     date.setDate(weekStart.getDate() + i);
     if (weekDays.includes(date.getDay())) {
