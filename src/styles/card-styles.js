@@ -858,7 +858,7 @@ export function getCardStyles() {
       /* Week Compact View Styles */
       .week-compact-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(7, 1fr);
         gap: 1px;
         background: var(--calendar-grid-color, #e5e7eb);
         border-top: 1px solid var(--calendar-grid-color, #e5e7eb);
