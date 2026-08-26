@@ -879,6 +879,7 @@ export function getCardStyles() {
       }
 
       .week-day-header {
+        position: relative;
         text-align: center;
         margin-bottom: var(--week-compact-day-header-spacing, 12px);
         padding-bottom: var(--week-compact-day-header-spacing, 12px);
@@ -888,6 +889,14 @@ export function getCardStyles() {
         align-items: center;
         min-height: var(--week-compact-header-height, auto);
         box-sizing: border-box;
+      }
+
+      .week-day-moon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #6b7280;
+        --mdc-icon-size: 18px;
       }
 
       .week-day-header-main {

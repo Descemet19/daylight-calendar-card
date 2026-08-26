@@ -1091,6 +1091,11 @@ test('Week Compact day header options preserve defaults and emit scoped custom p
   const defaultMarkup = defaultCard.renderWeekCompact();
   assert.match(defaultMarkup, /--week-compact-weekday-font-size: 12px;/);
   assert.match(defaultMarkup, /--week-compact-day-header-spacing: 12px;/);
+  assert.equal(
+    (defaultMarkup.match(/class="week-day-moon"/g) || []).length,
+    (defaultMarkup.match(/class="week-day-column /g) || []).length
+  );
+  assert.match(defaultMarkup, /class="week-day-moon" icon="mdi:moon-/);
   assert.doesNotMatch(defaultMarkup, /--week-compact-weekday-color:/);
 
   const customCard = makeCard({

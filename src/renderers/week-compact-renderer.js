@@ -1,3 +1,5 @@
+import { getMoonPhase } from '../utils/moon-utils.js';
+
 export function renderWeekCompactView({
   config,
   weekDays,
@@ -20,10 +22,12 @@ export function renderWeekCompactView({
           const events = helpers.sortEventsForDate(dayEventsForMatching.filter((event) => !helpers.isEventHiddenByStyle(event)), date);
           const dayStyle = helpers.getDayStyleAttributes(date, dayEventsForMatching, isToday);
           const dayStyleAttr = dayStyle.style ? ` style="${dayStyle.style}"` : '';
+          const moonPhase = getMoonPhase(date);
 
           return `
             <div class="week-day-column ${isToday ? 'today' : ''} ${dayStyle.className}" data-date="${date.toISOString()}" data-click-target="day-header"${dayStyleAttr}>
               <div class="week-day-header">
+                <ha-icon class="week-day-moon" icon="${moonPhase.icon}" title="${moonPhase.name}" aria-label="${moonPhase.name}"></ha-icon>
                 <div class="week-day-header-main">
                   <div class="week-day-name">${dayNames[date.getDay()]}</div>
                   <div class="week-day-meta-row">
